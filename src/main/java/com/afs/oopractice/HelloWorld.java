@@ -2,11 +2,23 @@ package com.afs.oopractice;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        Car car = new Car("Car",30);
-        System.out.println(car.speedup());
+        GasolineEngine gasolineEngine = new GasolineEngine();
+        Car gasolineCar = new Car("GasolineCar",gasolineEngine);
+        gasolineCar.speedup();
+
+        ElectricEngine electricEngine = new ElectricEngine();
+        Car electricCar = new Car("ElectricCar", electricEngine);
+        electricCar.speedup();
 
         Truck truck = new Truck("Truck",10);
-        System.out.println(truck.speedup());
+        truck.speedup();
+
+        Driver driver = new Driver(gasolineCar);
+        driver.driving();
+        driver.setVehicleDriving(electricCar);
+        driver.driving();
+        driver.setVehicleDriving(truck);
+        driver.driving();
 
     }
 }

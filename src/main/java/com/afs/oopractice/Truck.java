@@ -1,15 +1,12 @@
 package com.afs.oopractice;
 
-public class Truck {
-    private String name;
-    private int speed;
-
+public class Truck extends Vehicle {
     public Truck(String name, int speed) {
-        this.name = name;
-        this.speed = speed;
+        super(name, speed);
     }
 
-    public String speedup() {
-        return String.format("Truck: speedup %d km/h", speed);
+    @Override
+    public void speedup() {
+        System.out.printf("Truck: speedup %d km/h%n", getSpeed());
     }
 }
